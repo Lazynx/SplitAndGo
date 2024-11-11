@@ -29,3 +29,4 @@ struct WelcomeCardView: View {
         .padding(.horizontal)
     }
 }
+

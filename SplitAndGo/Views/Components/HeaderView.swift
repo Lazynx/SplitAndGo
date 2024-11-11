@@ -9,16 +9,18 @@ import SwiftUI
 
 struct HeaderView: View {
     let userAvatar: String
+    let bell = Image(systemName: "bell")
     
     var body: some View {
         HStack {
-            AvatarView(imageURL: userAvatar, size: 40)
+            Button(action: {}) {
+                AvatarView(imageSource: .asset(userAvatar), size: 40)
+            }
             
             Spacer()
             
             Button(action: {}) {
-                Image(systemName: "bell")
-                    .foregroundColor(.black)
+                AvatarView(imageSource: .systemName("bell"), size: 30)
             }
             
         }

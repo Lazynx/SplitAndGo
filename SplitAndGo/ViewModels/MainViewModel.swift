@@ -57,11 +57,10 @@ class MainViewModel: ObservableObject {
             )
         ]
         
-        // Статические данные друзей
         self.friends = [
-            Friend(name: "Yoldash", avatarImageLink: "avatar1"),
-            Friend(name: "Жирный", avatarImageLink: "avatar2"),
-            Friend(name: "Солнышко", avatarImageLink: "avatar3")
+            Friend(name: "Test1", avatarImageLink: "avatar1"),
+            Friend(name: "Test2", avatarImageLink: "avatar2"),
+            Friend(name: "Test3", avatarImageLink: "avatar3")
         ]
     }
 }

@@ -13,7 +13,7 @@ struct ParticipantsView: View {
         HStack(spacing: 5) { // Устанавливаем положительный spacing между иконками и цифрой
             HStack(spacing: -10) { // Отрицательный spacing для перекрытия иконок
                 ForEach(participants.prefix(3)) { participant in
-                    AvatarView(imageURL: participant.avatarImageLink, size: 30)
+                    AvatarView(imageSource: .asset(participant.avatarImageLink), size: 30)
                 }
             }
             

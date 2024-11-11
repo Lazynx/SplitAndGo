@@ -13,7 +13,7 @@ struct TabBarButton: View {
     let action: () -> Void
     
     var body: some View {
-        Button(action: {}) {
+        Button(action: action) {
             Image(systemName: systemName)
                 .font(.title2)
                 .foregroundColor(isSelected ? .blue : .gray)

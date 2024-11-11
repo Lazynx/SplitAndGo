@@ -12,7 +12,7 @@ struct FriendCircleView: View {
     
     var body: some View {
         VStack {
-            AvatarView(imageURL: friend.avatarImageLink, size: 80)
+            AvatarView(imageSource: .asset(friend.avatarImageLink), size: 80)
             
             Text(friend.name)
                 .font(.caption)

@@ -25,11 +25,11 @@ struct TabBarView: View {
         .padding(.vertical, 8)
         .background(Color.white)
         .shadow(color: Color.black.opacity(0.1), radius: 10, y: -5)
-        .sheet(isPresented: $viewModel.isShowingCamera) {
+        .fullScreenCover(isPresented: $viewModel.isShowingCamera) {
             ImagePicker(sourceType: .camera) { image in
-                // Обработка полученного изображения
                 viewModel.isShowingCamera = false
             }
+            .background(Color.black)
         }
     }
 }

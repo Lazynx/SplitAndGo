@@ -10,7 +10,7 @@ import Foundation
 struct DateFormatterHelper {
     static let shared: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateStyle = .medium // Вы можете изменить стиль на короткий, длинный и т.д.
+        formatter.dateStyle = .medium
         return formatter
     }()
 }
