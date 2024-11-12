@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-struct SectionHeaderView: View {
+struct SectionHeaderView<Destination: View>: View {
     let title: String
     let actionTitle: String
+    let destination: Destination?
     
     var body: some View {
         HStack {
@@ -19,9 +20,20 @@ struct SectionHeaderView: View {
             
             Spacer()
             
-            Button(actionTitle) {
+            if let destination = destination {
+                    NavigationLink(destination: destination) {
+                    Text(actionTitle)
+                        .foregroundColor(.gray)
+                }
+            } else {
+                Button(actionTitle) {
+                }
+                .foregroundColor(.gray)
             }
-            .foregroundColor(.gray)
+            
+//            Button(actionTitle) {
+//            }
+//            .foregroundColor(.gray)
         }
     }
 }

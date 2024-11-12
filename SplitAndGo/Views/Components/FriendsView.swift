@@ -14,7 +14,8 @@ struct FriendsView: View {
         VStack(alignment: .leading, spacing: 15) {
             SectionHeaderView(
                 title: "Друзья",
-                actionTitle: "\(friends.count) >"
+                actionTitle: "\(friends.count) >",
+                destination: FriendListView(friends: friends)
             )
             
             LazyHGrid(rows: [GridItem(.adaptive(minimum: 60))], spacing: 16) {

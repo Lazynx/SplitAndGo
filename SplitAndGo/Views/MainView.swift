@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @StateObject private var viewModel = MainViewModel()
+    @StateObject private var cameraViewModel = CameraViewModel()
     
     var body: some View {
         VStack(spacing: 0) {
@@ -33,5 +34,6 @@ struct MainView: View {
             TabBarView()
         }
         .background(Color(hex: "F8F8F8"))
+        .environmentObject(cameraViewModel)
     }
 }

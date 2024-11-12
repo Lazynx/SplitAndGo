@@ -7,6 +7,6 @@
 
 import Foundation
 
-class TabBarViewModel: ObservableObject {
+class CameraViewModel: ObservableObject {
     @Published var isShowingCamera = false
 }

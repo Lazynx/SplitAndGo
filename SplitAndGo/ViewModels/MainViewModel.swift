@@ -54,7 +54,14 @@ class MainViewModel: ObservableObject {
                 date: Date(),
                 totalAmount: 2680,
                 participants: [user2, user3]
-            )
+            ),
+            Bill(
+                placeName: "Serik KBTU",
+                icon: "☕️",
+                date: Date(),
+                totalAmount: 2680,
+                participants: [user2, user3]
+            ),
         ]
         
         self.friends = [

@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct SplitButtonView: View {
+    @EnvironmentObject var cameraViewModel: CameraViewModel
+    
     var body: some View {
-        Button(action: {}) {
+        Button(action: {
+            cameraViewModel.isShowingCamera = true
+        }) {
             Text("Разделить")
                 .font(.headline)
                 .foregroundColor(.white)

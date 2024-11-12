@@ -14,11 +14,19 @@ struct RecentOrdersView: View {
         VStack(alignment: .leading, spacing: 15) {
             SectionHeaderView(
                 title: "Последние заказы",
-                actionTitle: "Посмотреть все"
+                actionTitle: "\(bills.count) >",
+                destination: RecentOrdersListView()
             )
             
-            ForEach(bills) { bill in
-                OrderCardView(bill: bill)
+            if bills.isEmpty {
+                Text("Нет доступных заказов")
+                    .foregroundColor(.gray)
+                    .font(.subheadline)
+                    .padding()
+            } else {
+                ForEach(bills.prefix(2)) { bill in
+                    OrderCardView(bill: bill)
+                }
             }
         }
         .padding(.horizontal)

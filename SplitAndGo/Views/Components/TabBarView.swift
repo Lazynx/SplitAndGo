@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TabBarView: View {
-    @StateObject var viewModel = TabBarViewModel()
+    @EnvironmentObject var cameraViewModel: CameraViewModel
     
     var body: some View {
         HStack(spacing: 0) {
@@ -16,18 +16,15 @@ struct TabBarView: View {
                 
             })
             TabBarButton(systemName: "camera", isSelected: false, action: {
-                viewModel.isShowingCamera = true
-            })
-            TabBarButton(systemName: "map", isSelected: false, action: {
-                
+                cameraViewModel.isShowingCamera = true
             })
         }
         .padding(.vertical, 8)
         .background(Color.white)
         .shadow(color: Color.black.opacity(0.1), radius: 10, y: -5)
-        .fullScreenCover(isPresented: $viewModel.isShowingCamera) {
+        .fullScreenCover(isPresented: $cameraViewModel.isShowingCamera) {
             ImagePicker(sourceType: .camera) { image in
-                viewModel.isShowingCamera = false
+                cameraViewModel.isShowingCamera = false
             }
             .background(Color.black)
         }
